@@ -33,12 +33,6 @@ class DetailTableViewController: UITableViewController {
 		
 		super.viewWillAppear(animated)
 		
-		guard let city = city else {
-			return
-		}
-		
-		self.title = "\(city.name), \(city.country)"
-		
 		setupView()
 	}
 	
@@ -47,6 +41,8 @@ class DetailTableViewController: UITableViewController {
 		guard let forecast = forecast, let city = city else {
 			return
 		}
+		
+		self.title = "\(city.name), \(city.country)"
 		
 		let location = CLLocationCoordinate2D(latitude: city.coord.lat, longitude: city.coord.lon)
 		let region = MKCoordinateRegion(center: location, latitudinalMeters: 4000, longitudinalMeters: 4000)

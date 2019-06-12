@@ -11,7 +11,7 @@ import Foundation
 
 public enum WeatherEndPoint: String {
 	
-	case forecast = "forecast"
+	case forecast
 }
 
 extension WeatherEndPoint: EndPointType {
@@ -39,7 +39,7 @@ extension WeatherEndPoint: EndPointType {
 								  urlParameters: ["q": city,
 												  "appid": apiKey])
 	}
-	
+
 	var headers: HTTPHeaders? {
 		return nil
 	}

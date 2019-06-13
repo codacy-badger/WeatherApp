@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias NetworkRouterCompletion = (_ data: Data?,_ response: URLResponse?,_ error: Error?)->()
+public typealias NetworkRouterCompletion = (_ data: Data?, _ response: URLResponse?, _ error: Error?) ->Void
 
 class Router<EndPoint: EndPointType>: NetworkRouter {
 	
@@ -81,8 +81,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
 		do {
 			try bodyEncoding.encode(urlRequest: &request,
 									bodyParameters: bodyParameters, urlParameters: urlParameters)
-		}
-		catch {
+		} catch {
 			throw error
 		}
 	}

@@ -28,7 +28,7 @@ struct NetworkManager {
 	
 	let router = Router<WeatherEndPoint>()
 	
-	func getForecast(completion: @escaping (_ weather: Forecast?, _ error: String?) ->()) {
+	func getForecast(completion: @escaping (_ weather: Forecast?, _ error: String?) ->Void) {
 		
 		router.request(.forecast) { data, response, error in
 			

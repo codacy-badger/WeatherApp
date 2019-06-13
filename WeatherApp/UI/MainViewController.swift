@@ -19,7 +19,7 @@ class MainTableViewController: UITableViewController {
 		
 		super.viewWillAppear(animated)
 		
-		networkManager.getForecast() { forecast, _ in
+		networkManager.getForecast { forecast, _ in
 			
 			guard let forecast = forecast else {
 				return
@@ -41,7 +41,7 @@ class MainTableViewController: UITableViewController {
 			return
 		}
 		
-		if let indexPath = tableView.indexPathForSelectedRow  {
+		if let indexPath = tableView.indexPathForSelectedRow {
 		
 			vc.city = forecast?.city
 			vc.forecast = items[indexPath.row]
@@ -49,8 +49,7 @@ class MainTableViewController: UITableViewController {
 	}
 }
 
-
-//MARK: UITableViewDataSource
+// MARK: UITableViewDataSource
 extension MainTableViewController {
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

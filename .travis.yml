@@ -1,0 +1,4 @@
+language: swift
+xcode_project: WeatherApp.xcodeproj
+xcode_scheme: WeatherApp
+xcode_destination: platform=iOS Simulator,OS=10.1,name=iPad Pro (9.7-inch)

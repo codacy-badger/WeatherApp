@@ -68,8 +68,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
 											 request: &request)
 			}
 			return request
-		}
-		catch {
+		} catch {
 			throw error
 		}
 	}
